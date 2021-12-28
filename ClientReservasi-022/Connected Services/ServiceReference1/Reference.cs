@@ -407,5 +407,30 @@ namespace ClientReservasi_022.ServiceReference1 {
         public System.Threading.Tasks.Task<ClientReservasi_022.ServiceReference1.Pemesanan[]> PemensananAsync() {
             return base.Channel.PemensananAsync();
         }
+
+        internal string Login(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string Register(string username, string password, string kategori)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string UpdateRegister(string username, string passwrod, string kategori, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string DeleteRegister(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object DataRegist()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

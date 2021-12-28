@@ -24,6 +24,8 @@ namespace ClientReservasi_022
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wCFReservasiDataSet.Pemesanan' table. You can move, or remove it, as needed.
+            this.pemesananTableAdapter.Fill(this.wCFReservasiDataSet.Pemesanan);
 
         }
 
@@ -65,7 +67,7 @@ namespace ClientReservasi_022
 
         public void TampilData()
         {
-            var List = service.Pemensanan1();
+            var List = service.Pemensanan();
             dtPemesanan.DataSource = List;
         }
 
@@ -95,10 +97,10 @@ namespace ClientReservasi_022
         private void dtPemesanan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxID.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[0].Value);
-            textBoxNama.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[1].Value);
-            textBoxNoTlf.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[2].Value);
-            textBoxJumlah.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[3].Value);
-            textBoxIDLokasi.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[4].Value);
+            textBoxNama.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[3].Value);
+            textBoxNoTlf.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[4].Value);
+            textBoxJumlah.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[1].Value);
+            textBoxIDLokasi.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[2].Value);
 
             textBoxJumlah.Enabled = false;
             textBoxIDLokasi.Enabled = false;
@@ -108,6 +110,13 @@ namespace ClientReservasi_022
 
             btSimpan.Enabled = false;
             textBoxID.Enabled = false;
+        }
+
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+            Register fm = new Register();
+            this.Hide();
+            fm.Show();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,15 @@
             this.btHapus = new System.Windows.Forms.Button();
             this.btClear = new System.Windows.Forms.Button();
             this.dtPemesanan = new System.Windows.Forms.DataGridView();
+            this.wCFReservasiDataSet = new ClientReservasi_022.WCFReservasiDataSet();
+            this.pemesananBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pemesananTableAdapter = new ClientReservasi_022.WCFReservasiDataSetTableAdapters.PemesananTableAdapter();
+            this.pemesananBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtPemesanan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wCFReservasiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemesananBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemesananBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -177,11 +186,40 @@
             this.dtPemesanan.TabIndex = 14;
             this.dtPemesanan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtPemesanan_CellClick);
             // 
+            // wCFReservasiDataSet
+            // 
+            this.wCFReservasiDataSet.DataSetName = "WCFReservasiDataSet";
+            this.wCFReservasiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pemesananBindingSource1
+            // 
+            this.pemesananBindingSource1.DataMember = "Pemesanan";
+            this.pemesananBindingSource1.DataSource = this.wCFReservasiDataSet;
+            // 
+            // pemesananTableAdapter
+            // 
+            this.pemesananTableAdapter.ClearBeforeFill = true;
+            // 
+            // pemesananBindingSource
+            // 
+            this.pemesananBindingSource.DataSource = typeof(ClientReservasi_022.ServiceReference1.Pemesanan);
+            // 
+            // btLogin
+            // 
+            this.btLogin.Location = new System.Drawing.Point(670, 58);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.Size = new System.Drawing.Size(75, 23);
+            this.btLogin.TabIndex = 15;
+            this.btLogin.Text = "Register";
+            this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btLogin);
             this.Controls.Add(this.dtPemesanan);
             this.Controls.Add(this.btClear);
             this.Controls.Add(this.btHapus);
@@ -201,6 +239,9 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtPemesanan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wCFReservasiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemesananBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemesananBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +264,11 @@
         private System.Windows.Forms.Button btHapus;
         private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.DataGridView dtPemesanan;
+        private System.Windows.Forms.BindingSource pemesananBindingSource;
+        private WCFReservasiDataSet wCFReservasiDataSet;
+        private System.Windows.Forms.BindingSource pemesananBindingSource1;
+        private WCFReservasiDataSetTableAdapters.PemesananTableAdapter pemesananTableAdapter;
+        private System.Windows.Forms.Button btLogin;
     }
 }
 
